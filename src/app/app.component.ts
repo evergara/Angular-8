@@ -35,4 +35,8 @@ export class AppComponent {
       this.cleanRockBandName();
     }
   }
+
+  emptyRockBand(): void {
+    this.rockBands = [];
+  }
 }

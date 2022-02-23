@@ -6,7 +6,16 @@
 
 <input type="text" name="band" id="band" [(ngModel)]="rockBandName" />
 <button (click)="addRockBand()">Add rock Band</button>
+<button (click)="emptyRockBand()">Empty Rock Band</button>
 
 <ul>
+  <li *ngIf="rockBands.length === 0">No hay bandas de Rock</li>
   <li *ngFor="let rock of rockBands">{{ rock }}</li>
 </ul>
+
+<div *ngIf="rockBandName === 'Metallica'">
+  <h2>Es {{ rockBandName }}</h2>
+
+  Esta opcion sirve pucho para pintar opciones de la pagina dependiendo de los
+  permisos del usuario
+</div>
