@@ -19,3 +19,11 @@
   Esta opcion sirve pucho para pintar opciones de la pagina dependiendo de los
   permisos del usuario
 </div>
+
+<div [ngSwitch]="rockBandName">
+  <p *ngSwitchCase="'nirvana'">Es {{ rockBandName }}</p>
+  <p *ngSwitchCase="'Metallica'">Es {{ rockBandName }}</p>
+  <p *ngSwitchCase="'Mana'">Es {{ rockBandName }}</p>
+  <p *ngSwitchCase="'Prisioneros'">Es {{ rockBandName }}</p>
+  <p *ngSwitchDefault>no hace match</p>
+</div>
