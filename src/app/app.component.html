@@ -10,7 +10,10 @@
 
 <ul>
   <li *ngIf="rockBands.length === 0">No hay bandas de Rock</li>
-  <li *ngFor="let rock of rockBands">{{ rock }}</li>
+  <li *ngFor="let rock of rockBands; index as i">
+    <span (click)="deleteRockBand(i)">{{ rock }}</span>
+    <button (click)="updateRockBand(i)">Editar</button>
+  </li>
 </ul>
 
 <div *ngIf="rockBandName === 'Metallica'">
@@ -27,3 +30,15 @@
   <p *ngSwitchCase="'Prisioneros'">Es {{ rockBandName }}</p>
   <p *ngSwitchDefault>no hace match</p>
 </div>
+
+<ul>
+  <li *ngFor="let user of users">
+    <span>Nombre: {{ user.name }}</span>
+    <span>Edad: {{ user.age }}</span>
+    <span>Enail: {{ user.email }}</span>
+    <span>Soltero: {{ user.isSingle ? "casado" : "Soltero" }}</span>
+    <picture>
+      <img [src]="user.avatar" alt="" />
+    </picture>
+  </li>
+</ul>

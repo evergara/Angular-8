@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './model/user';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,26 @@ export class AppComponent {
   rockBandName: string;
 
   rockBands = ['Nirvana', 'Los prisoneros', 'Cass', 'as'];
+  
+  users: User[] = [
+       { 
+         id: 1,
+         name: 'Emerson',
+         email: 'mycorreo@gmail.com',
+         age: 25,
+         isSingle: false,
+         avatar: ''
+       },
+       { 
+        id: 2,
+        name: 'Brilis',
+        email: 'brilis@gmail.com',
+        age: 25,
+        isSingle: true,
+        avatar: ''
+      }
+  ]
+
 
   constructor(){
     this.rockBandName = '';
@@ -38,5 +59,13 @@ export class AppComponent {
 
   emptyRockBand(): void {
     this.rockBands = [];
+  }
+
+  deleteRockBand(index: number): void {
+    this.rockBands.splice(index, 1);
+  }
+
+  updateRockBand(index: number): void {
+    this.rockBands[index] = 'Se ha cambiado';
   }
 }
