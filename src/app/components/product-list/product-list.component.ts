@@ -35,5 +35,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  deleteProduct(id_product: number): void {
+     console.log(`Estas inetnatado eliminar el producto con id ${id_product}`);
+  }
 
 }
