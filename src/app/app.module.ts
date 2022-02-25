@@ -10,6 +10,7 @@ import { ReversePipe } from './reverse.pipe';
 import { NotPerformanceComponent } from './compoents/not-performance/not-performance.component';
 import { PipePerformanceComponent } from './compoents/pipe-performance/pipe-performance.component';
 import { FibonacciPipe } from './pipes/fibonacci.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FibonacciPipe } from './pipes/fibonacci.pipe';
     ReversePipe,
     NotPerformanceComponent,
     PipePerformanceComponent,
-    FibonacciPipe
+    FibonacciPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
