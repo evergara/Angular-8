@@ -1,0 +1,7 @@
+<h2>Listado de usaurios desde el servicio</h2>
+
+<app-user
+  [user]="dataUser"
+  (userEventClic)="userEventClic($event)"
+  *ngFor="let dataUser of users"
+></app-user>

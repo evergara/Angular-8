@@ -24,13 +24,10 @@ export class PipePerformanceComponent implements OnInit {
     this.name = ""
   }
 
-
-
   ngOnInit(): void {
   }
 
-  addUser(): void {
-    console.log('change....');
+  addUser2(): void {
     this.users.push({
       name: this.name,
       number: 12

@@ -39,12 +39,12 @@ export class NotPerformanceComponent implements OnInit {
   addUser(): void {
     this.users.push({
       name: this.name,
-      number: 12
+      number: 11
     })
   }
 
   calcFib(value:number): number {
-    console.log('fib');
+    console.log('fib....');
     return fibonacci(value);
   }
 }

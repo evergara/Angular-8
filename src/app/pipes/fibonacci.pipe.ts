@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FibonacciPipe implements PipeTransform {
 
   transform(num: number): number {
+    console.log('FibonacciPipe...');
     return this.fibonacci(num)
   }
 

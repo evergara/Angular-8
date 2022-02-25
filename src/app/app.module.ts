@@ -11,6 +11,8 @@ import { NotPerformanceComponent } from './compoents/not-performance/not-perform
 import { PipePerformanceComponent } from './compoents/pipe-performance/pipe-performance.component';
 import { FibonacciPipe } from './pipes/fibonacci.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HighlightDirective } from './directives/highlight.directive';
     NotPerformanceComponent,
     PipePerformanceComponent,
     FibonacciPipe,
-    HighlightDirective
+    HighlightDirective,
+    UserListComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

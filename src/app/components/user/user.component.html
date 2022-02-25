@@ -1,0 +1,9 @@
+<div>
+  <span>Nombre: {{ user.name }}</span>
+  <span>Edad: {{ user.age }}</span>
+  <span>Enail: {{ user.email }}</span>
+  <span>Soltero: {{ user.isSingle ? "casado" : "Soltero" }}</span>
+  <picture>
+    <img [src]="user.avatar" alt="" />
+  </picture>
+</div>
