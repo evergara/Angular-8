@@ -10,7 +10,7 @@ export class ProductComponent implements OnInit {
   //@ts-ignore
   @Input() product: Product;
   @Output() eventDeleteProduct: EventEmitter<number> = new EventEmitter();
-  
+  date: Date = new Date();
 
   constructor() {}
 
