@@ -1,0 +1,7 @@
+<h1>Not Performance</h1>
+
+<input type="text" [(ngModel)]="name" (keydown.enter)="addUser()" />
+
+<ul>
+  <li *ngFor="let user of users">{{ user.name }} {{ calcFib(user.number) }}</li>
+</ul>

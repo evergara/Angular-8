@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ReversePipe } from './reverse.pipe';
+import { NotPerformanceComponent } from './compoents/not-performance/not-performance.component';
+import { PipePerformanceComponent } from './compoents/pipe-performance/pipe-performance.component';
+import { FibonacciPipe } from './pipes/fibonacci.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductListComponent,
-    ReversePipe
+    ReversePipe,
+    NotPerformanceComponent,
+    PipePerformanceComponent,
+    FibonacciPipe
   ],
   imports: [
     BrowserModule,
