@@ -1,11 +1,14 @@
-<h2>{{ product.name }}</h2>
-<span>{{ product.price }}</span>
+<h2>
+  {{ product.name | titlecase }} - {{ product.name | reverse | titlecase }}
+</h2>
+<span>{{ product.price | currency: "COP":"symbol-narrow":"3.2-2" }}</span>
 <picture>
   <img [src]="product.image" alt="" />
   <caption>
     {{
-      product.description
+      product.description | slice: 0:15
     }}
   </caption>
 </picture>
+<span>{{ date | date: "mediumDate" }}</span>
 <button (click)="deleteProduct()">Eliminar</button>
