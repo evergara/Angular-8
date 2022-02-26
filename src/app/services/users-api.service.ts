@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ResponseUserRandom } from '../model/responserserrandom';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { UserRandom } from './../model/userrandom';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,13 @@ export class UsersApiService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUser(): Observable<ResponseUserRandom> {
-    return this.http.get<ResponseUserRandom>('https://randomuser.me/api?results=5');
+  getAllUser(results: number = 5){
+    return this.http.get<ResponseUserRandom>(`https://randomuser.me/api?results=${results}`).pipe(
+      map(response => response.results),
+      map(users => users.map(user => {
+        user.county = "Colombia"
+        return user;
+      }))
+    );
   }
 }

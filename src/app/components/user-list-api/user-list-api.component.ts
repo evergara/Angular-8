@@ -21,9 +21,8 @@ export class UserListApiComponent implements OnInit {
   }
 
   getAllUser(): void {
-    this.userService.getAllUser().subscribe( data => {
-      console.log(data.results);
-      this.users = data.results;
+    this.userService.getAllUser().subscribe( users => {
+      this.users = users;
     });
     
   }
