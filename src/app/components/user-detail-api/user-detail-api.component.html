@@ -1,0 +1,12 @@
+<div>
+  <span
+    >Nombre: {{ user.name.title }}, {{ user.name.first }}
+    {{ user.name.last }}</span
+  >
+  <span>Genero: {{ user.gender }}</span>
+  <span>Ciudad: {{ user.city }}</span>
+  <span>Paìs: {{ user.county }}</span>
+  <picture>
+    <img [src]="user.picture.large" alt="" />
+  </picture>
+</div>

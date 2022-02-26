@@ -13,6 +13,9 @@ import { FibonacciPipe } from './pipes/fibonacci.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserComponent } from './components/user/user.component';
+import { UserListApiComponent } from './components/user-list-api/user-list-api.component';
+import { UserDetailApiComponent } from './components/user-detail-api/user-detail-api.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,15 @@ import { UserComponent } from './components/user/user.component';
     FibonacciPipe,
     HighlightDirective,
     UserListComponent,
-    UserComponent
+    UserComponent,
+    UserListApiComponent,
+    UserDetailApiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
