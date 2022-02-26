@@ -1,0 +1,7 @@
+<h3>Lista de todos</h3>
+<app-todo-detail
+  (deleteEventTodo)="deleteTodo($event, i)"
+  (updatedEventTodo)="updatedTodo($event, i)"
+  [setTodo]="todo"
+  *ngFor="let todo of getTodos; index as i"
+></app-todo-detail>

@@ -16,6 +16,10 @@ import { UserComponent } from './components/user/user.component';
 import { UserListApiComponent } from './components/user-list-api/user-list-api.component';
 import { UserDetailApiComponent } from './components/user-detail-api/user-detail-api.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoComponent } from './components/todo/todo.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
+import { TodoCreatedComponent } from './components/todo-created/todo-created.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
     UserListComponent,
     UserComponent,
     UserListApiComponent,
-    UserDetailApiComponent
+    UserDetailApiComponent,
+    TodoComponent,
+    TodoListComponent,
+    TodoDetailComponent,
+    TodoCreatedComponent
   ],
   imports: [
     BrowserModule,
