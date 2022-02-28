@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
   //@ts-ignore
   @Input() product: Product;
   @Output() eventDeleteProduct: EventEmitter<number> = new EventEmitter();
+  @Output() clickedProduct: EventEmitter<number> = new EventEmitter();
   date: Date = new Date();
 
   constructor() {}
@@ -19,5 +20,10 @@ export class ProductComponent implements OnInit {
 
   deleteProduct(): void {
     this.eventDeleteProduct.emit(this.product.id);
+  }
+
+  viewDetail() {
+    console.log('viewDetail', this.product.name);
+    this.clickedProduct.emit(this.product.id);
   }
 }

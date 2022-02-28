@@ -2,6 +2,7 @@
 
 <app-product
   (eventDeleteProduct)="deleteProduct($event)"
+  (clickedProduct)="onClickedProduct($event)"
   [product]="product"
   *ngFor="let product of products"
 ></app-product>

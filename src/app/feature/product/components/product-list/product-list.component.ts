@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '@feature/product/model/product';
+import { Router } from '@angular/router';
+import { ProductService } from '@feature/product/shared/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,35 +10,24 @@ import { Product } from '@feature/product/model/product';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product [] = [
-    {
-      id: 1,
-      price: 10000,
-      name: 'Papa',
-      description: 'Es una buena papa..',
-      image: ''
-    },
-    {
-      id: 2,
-      price: 700,
-      name: 'Yuca',
-      description: 'Es una buena yuca..',
-      image: ''
-    },
-    {
-      id: 3,
-      price: 1700,
-      name: 'Platano',
-      description: 'Es una buena Platano..',
-      image: ''
-    }
-  ]
-  constructor() { }
+  products: Product [];
+  constructor(private router: Router, private productService: ProductService) { 
+    this.products = [];
+  }
 
   ngOnInit(): void {
+    this.productoAll();
   }
+  productoAll() {
+    this.products = this.productService.getAllProduct();
+  }
+
   deleteProduct(id_product: number): void {
      console.log(`Estas inetnatado eliminar el producto con id ${id_product}`);
   }
 
+  onClickedProduct(id: number) {
+    console.log('clicked', id);
+    this.router.navigate(['/product', id]);
+  }
 }

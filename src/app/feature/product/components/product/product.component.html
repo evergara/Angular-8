@@ -1,14 +1,18 @@
-<h2>
-  {{ product.name | titlecase }} - {{ product.name | reverse | titlecase }}
-</h2>
-<span>{{ product.price | currency: "COP":"symbol-narrow":"3.2-2" }}</span>
-<picture>
-  <img [src]="product.image" alt="" />
-  <caption>
-    {{
-      product.description | slice: 0:15
-    }}
-  </caption>
-</picture>
-<span>{{ date | date: "mediumDate" }}</span>
-<button (click)="deleteProduct()">Eliminar</button>
+<div class="products">
+  <h2>
+    {{ product.name | titlecase }} - {{ product.name | reverse | titlecase }}
+  </h2>
+  <picture>
+    <img [src]="product.image" [alt]="product.name" />
+    <caption>
+      {{
+        product.description | slice: 0:15
+      }}
+    </caption>
+  </picture>
+  <h5>{{ product.price | currency: "COP":"symbol-narrow":"3.2-2" }}</h5>
+  <p>{{ date | date: "mediumDate" }}</p>
+  <button (click)="deleteProduct()">Eliminar</button>
+  <button (click)="viewDetail()">ver el detalle</button>
+  <a [routerLink]="['/product', product.id]">Ver detalle con routerLink</a>
+</div>
