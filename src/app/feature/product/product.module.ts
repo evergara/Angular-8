@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,18 +8,21 @@ import { ProductComponent } from '@feature/product/components/product/product.co
 import { ProductListComponent } from '@feature/product/components/product-list/product-list.component';
 import { ProdcutDetailComponent } from '@feature/product/components/prodcut-detail/prodcut-detail.component';
 import { ProductService } from '@feature/product/shared/services/product.service';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductListComponent,
-    ProdcutDetailComponent
+    ProdcutDetailComponent,
+    ProductFormComponent
   ],
   imports: [
     CommonModule,
     ProductRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers: [

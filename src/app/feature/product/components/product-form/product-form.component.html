@@ -1,0 +1,10 @@
+<form novalidate [formGroup]="form" (ngSubmit)="createProduct()">
+  <input type="text" formControlName="name" />
+  <div *ngIf="nameField?.errors && nameField?.dirty">
+    <p *ngIf="nameField?.hasError('required')">El campo es obligatorio</p>
+  </div>
+  <input type="file" formControlName="image" />
+  <input type="number" formControlName="price" />
+  <textarea formControlName="description"></textarea>
+  <button type="submit" [disabled]="form.invalid">Crear producto</button>
+</form>

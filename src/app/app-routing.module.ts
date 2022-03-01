@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'performance',
     loadChildren: () => import('@feature/performance/performance.module').then(mod => mod.PerformanceModule),
   },
+  { 
+    path: 'contact',
+    loadChildren: () => import('@feature/contact/contact.module').then(mod => mod.ContactModule),
+  },
   { path: '**', 
     component: Page404Component
   }
