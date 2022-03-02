@@ -9,6 +9,7 @@ import { ProductListComponent } from '@feature/product/components/product-list/p
 import { ProdcutDetailComponent } from '@feature/product/components/prodcut-detail/prodcut-detail.component';
 import { ProductService } from '@feature/product/shared/services/product.service';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { MaterialModule } from '@material/material.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     ProductRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    MaterialModule
   ],
   providers: [
     ProductService

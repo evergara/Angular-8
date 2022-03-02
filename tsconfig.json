@@ -6,7 +6,8 @@
       "@core/*": ["./src/app/core/*"],
       "@feature/*": ["./src/app/feature/*"],
       "@shared/*": ["./src/app/shared/*"],
-      "@environments/*": ["./src/environments/*"]
+      "@environments/*": ["./src/environments/*"],
+      "@material/*": ["./src/app/material/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

@@ -1,18 +1,17 @@
-<div class="products">
-  <h2>
-    {{ product.name | titlecase }} - {{ product.name | reverse | titlecase }}
-  </h2>
-  <picture>
-    <img [src]="product.image" [alt]="product.name" />
-    <caption>
-      {{
-        product.description | slice: 0:15
-      }}
-    </caption>
-  </picture>
-  <h5>{{ product.price | currency: "COP":"symbol-narrow":"3.2-2" }}</h5>
-  <p>{{ date | date: "mediumDate" }}</p>
-  <button (click)="deleteProduct()">Eliminar</button>
-  <button (click)="viewDetail()">ver el detalle</button>
-  <a [routerLink]="['/product', product.id]">Ver detalle con routerLink</a>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ product.name | uppercase | reverse }}</mat-card-title>
+  </mat-card-header>
+  <img [src]="product.image" mat-card-image [alt]="product.name" />
+  <mat-card-content>
+    <h5>{{ product.price | currency | uppercase }}</h5>
+    <p>{{ product.description | slice: 0:15 | uppercase }}</p>
+    <p>{{ today | date: "yyyy.MM.dd" }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="viewDetail()">ver el detalle</button>
+    <a mat-raised-button [routerLink]="['/products', product.id]"
+      >Ver detalle con routerLink</a
+    >
+  </mat-card-actions>
+</mat-card>
