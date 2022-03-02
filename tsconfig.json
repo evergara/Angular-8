@@ -7,7 +7,8 @@
       "@feature/*": ["src/app/website/feature/*"],
       "@shared/*": ["./src/app/shared/*"],
       "@environments/*": ["./src/environments/*"],
-      "@material/*": ["./src/app/material/*"]
+      "@material/*": ["./src/app/material/*"],
+      "@auth/*": ["./src/app/auth/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

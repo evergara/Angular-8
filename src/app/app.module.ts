@@ -7,14 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from '@shared/shared.module';
-import { NavComponent } from './components/nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@material/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +20,6 @@ import { MaterialModule } from '@material/material.module';
     HttpClientModule,
     SharedModule,
     BrowserAnimationsModule,
-    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
