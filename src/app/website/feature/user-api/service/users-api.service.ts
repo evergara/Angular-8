@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ResponseUserRandom } from '@feature/user-api/model/responserserrandom';
 import { map, Observable } from 'rxjs';
-import { UserRandom } from './../model/userrandom';
+import { UserRandom } from '../model/userrandom';
 
 @Injectable({
   providedIn: 'root'

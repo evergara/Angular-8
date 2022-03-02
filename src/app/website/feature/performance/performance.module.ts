@@ -3,9 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '@shared/shared.module';
 
-import { PerformanceRoutingModule } from '@feature/performance/performance-routing.module';
-import { PipePerformanceComponent } from '@feature/performance/components/pipe-performance/pipe-performance.component';
-import { NotPerformanceComponent } from '@feature/performance/components/not-performance/not-performance.component';
+import { PerformanceRoutingModule } from 'src/app/website/feature/performance/performance-routing.module';
+import { PipePerformanceComponent } from 'src/app/website/feature/performance/components/pipe-performance/pipe-performance.component';
+import { NotPerformanceComponent } from 'src/app/website/feature/performance/components/not-performance/not-performance.component';
 
 
 @NgModule({

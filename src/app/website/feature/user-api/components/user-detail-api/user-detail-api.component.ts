@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserRandom } from './../../model/userrandom';
+import { UserRandom } from '../../model/userrandom';
 
 @Component({
   selector: 'app-user-detail-api',

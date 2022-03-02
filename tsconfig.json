@@ -4,7 +4,7 @@
   "compilerOptions": {
     "paths": {
       "@core/*": ["./src/app/core/*"],
-      "@feature/*": ["./src/app/feature/*"],
+      "@feature/*": ["src/app/website/feature/*"],
       "@shared/*": ["./src/app/shared/*"],
       "@environments/*": ["./src/environments/*"],
       "@material/*": ["./src/app/material/*"]
