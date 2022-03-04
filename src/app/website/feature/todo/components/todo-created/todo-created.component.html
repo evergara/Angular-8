@@ -1,4 +1,10 @@
 <h3>Crear Todo</h3>
-
+<!--
 <input type="text" name="" id="" [(ngModel)]="title" />
 <input type="button" value="Crear" (click)="createdTodo()" />
+-->
+<input type="text" [formControl]="fieldTitle" (keydown.enter)="createdTodo()" />
+<div *ngIf="fieldTitle.errors && fieldTitle.dirty">
+  <p *ngIf="fieldTitle.hasError('minlength')">Minimo debe ser de 3 letras</p>
+  <p *ngIf="fieldTitle.hasError('isExistTask')">la tarea ya existe</p>
+</div>
