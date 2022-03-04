@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
-import { CustomValidators } from '@feature/contact/validators/validators';
+import { CustomValidators } from '@shared/validators/validators';
 
 @Component({
   selector: 'app-contact',

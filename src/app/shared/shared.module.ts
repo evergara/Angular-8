@@ -10,13 +10,14 @@ import { Page404Component } from '@shared/components/page404/page404.component';
     FibonacciPipe,
     HighlightDirective,
     ReversePipe,
-    Page404Component,
+    Page404Component
+    
   ],
   exports: [
     FibonacciPipe,
     HighlightDirective,
     ReversePipe, 
-    Page404Component,
+    Page404Component
   ],
   imports: [
     CommonModule,

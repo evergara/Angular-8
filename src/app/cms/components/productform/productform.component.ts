@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+
+import { CustomValidators } from '@shared/validators/validators'; 
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-productform',
@@ -7,6 +11,57 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./productform.component.scss']
 })
 export class ProductformComponent {
+  //@ts-ignore
+  form: FormGroup;
+//@ts-ignore
+  uploadPercent$: Observable<number | undefined>;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private fireStorage: AngularFireStorage
+  ) {
+    this.buildForm();
+  }
+
+  ngOnInit() {
+  }
+
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      title: ['', [Validators.required, CustomValidators.isEmerson]],
+      image: [''],
+      price: [10000, [Validators.required]],
+      text: ['', [Validators.required, Validators.minLength(100)]],
+      category: ['', [Validators.required]]
+    });
+
+    this.form
+    .valueChanges
+    .subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  createProduct() {
+    if (this.form.valid) {
+      console.log(this.form.value);
+    }
+  }
+
+  get titleField() {
+    return this.form.get('title');
+  }
+
+  uploadFile(event: any) {
+    const file = event.target.files[0];
+    const filePath = `images/${file.name}`;
+    const fileRef = this.fireStorage.ref(filePath);
+    const task = this.fireStorage.upload(filePath, file);
+
+    this.uploadPercent$ = task.percentageChanges();
+  }
+
+  /*
   addressForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],
@@ -89,5 +144,5 @@ export class ProductformComponent {
 
   onSubmit(): void {
     alert('Thanks!');
-  }
+  }*/
 }
