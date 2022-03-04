@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductformComponent } from './components/productform/productform.component';
+import { ProductTableComponent } from './components/product-table/product-table.component';
 
 const HOME_ROUTE = '/cms/dashboard';
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'products/new',
         component: ProductformComponent
+      },
+      {
+        path: 'products',
+        component: ProductTableComponent
       },
     ]
   },
