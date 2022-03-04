@@ -9,6 +9,7 @@
     <p>{{ today | date: "yyyy.MM.dd" }}</p>
   </mat-card-content>
   <mat-card-actions>
+    <button mat-raised-button (click)="addCart()">añadir al carrito</button>
     <button mat-raised-button (click)="viewDetail()">ver el detalle</button>
     <a mat-raised-button [routerLink]="['/products', product.id]"
       >Ver detalle con routerLink</a

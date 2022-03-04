@@ -41,6 +41,10 @@ const routes: Routes = [
         path: 'contact',
         loadChildren: () => import('@feature/contact/contact.module').then(mod => mod.ContactModule),
       },
+      { 
+        path: 'cart',
+        loadChildren: () => import('@feature/cart/cart.module').then(mod => mod.CartModule),
+      },
     ]
   }
 ];

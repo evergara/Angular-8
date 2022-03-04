@@ -1,21 +1,35 @@
 <mat-toolbar color="primary">
-  <nav>
-    <a mat-button matTooltip="Modulo basico" routerLink="/basic">Basic</a>
-    <a mat-button matTooltip="Modulo Products" routerLink="/product"
-      >Products</a
-    >
-    <a mat-button matTooltip="Modulo Todos" routerLink="/todo">Todos</a>
-    <a mat-button matTooltip="Modulo basico" routerLink="/user">Users</a>
-    <a mat-button matTooltip="Modulo userapi" routerLink="/userapi">userapi</a>
-    <a mat-button matTooltip="Modulo performance" routerLink="/performance"
-      >performance</a
-    >
-    <a
-      mat-button
-      matTooltip="Modulo no performance"
-      routerLink="/performance/notperformance"
-      >no performance</a
-    >
-    <a mat-button matTooltip="Modulo Contact" routerLink="/contact">Contact</a>
-  </nav>
+  <div class="nav-bar">
+    <nav>
+      <a mat-button matTooltip="Modulo basico" routerLink="/basic">Basic</a>
+      <a mat-button matTooltip="Modulo Products" routerLink="/product"
+        >Products</a
+      >
+      <a mat-button matTooltip="Modulo Todos" routerLink="/todo">Todos</a>
+      <a mat-button matTooltip="Modulo basico" routerLink="/user">Users</a>
+      <a mat-button matTooltip="Modulo userapi" routerLink="/userapi"
+        >userapi</a
+      >
+      <a mat-button matTooltip="Modulo performance" routerLink="/performance"
+        >performance</a
+      >
+      <a
+        mat-button
+        matTooltip="Modulo no performance"
+        routerLink="/performance/notperformance"
+        >no performance</a
+      >
+      <a mat-button matTooltip="Modulo Contact" routerLink="/contact"
+        >Contact</a
+      >
+    </nav>
+  </div>
+  <a
+    routerLink="/cart"
+    mat-raised-button
+    [matBadge]="totalProducts$ | async"
+    matBadgeColor="accent"
+  >
+    Carrito
+  </a>
 </mat-toolbar>

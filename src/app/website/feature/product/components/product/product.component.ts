@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   @Input() product: Product;
   @Output() eventDeleteProduct: EventEmitter<number> = new EventEmitter();
   @Output() clickedProduct: EventEmitter<number> = new EventEmitter();
+  @Output() addCartProduct = new EventEmitter<Product>();
   today: Date = new Date();
 
   constructor() {}
@@ -25,5 +26,9 @@ export class ProductComponent implements OnInit {
   viewDetail() {
     console.log('viewDetail', this.product.name);
     this.clickedProduct.emit(this.product.id);
+  }
+
+  addCart() {
+    this.addCartProduct.emit(this.product);
   }
 }

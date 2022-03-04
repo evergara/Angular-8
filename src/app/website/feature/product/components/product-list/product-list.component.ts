@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '@feature/product/model/product';
 import { Router } from '@angular/router';
 import { ProductService } from '@feature/product/shared/services/product.service';
+import { CartService } from '@feature/cart/services/cart.service'; 
 
 @Component({
   selector: 'app-product-list',
@@ -11,7 +12,9 @@ import { ProductService } from '@feature/product/shared/services/product.service
 export class ProductListComponent implements OnInit {
 
   products: Product [];
-  constructor(private router: Router, private productService: ProductService) { 
+  constructor(private router: Router, 
+    private cart: CartService,
+    private productService: ProductService) { 
     this.products = [];
   }
 
@@ -30,4 +33,9 @@ export class ProductListComponent implements OnInit {
     console.log('clicked', id);
     this.router.navigate(['/product', id]);
   }
+
+  onAddCart(product: Product) {
+    this.cart.addProduct(product);
+  }
+
 }
